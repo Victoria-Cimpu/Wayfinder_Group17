@@ -4,6 +4,7 @@ Project:
 Create a library wayfinder with ease of use and accessibility in mind.
 
 Team:  
-Victoria Cimpu,
-Tuna Bolukbasi
-Maxime Le Sage
+Victoria Cimpu, 
+Tuna Bolukbasi, 
+Maxime Le Sage, 
+Jessica Nguyen
