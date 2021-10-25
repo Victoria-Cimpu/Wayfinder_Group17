@@ -7,4 +7,5 @@ Team:
 Victoria Cimpu, 
 Tuna Bolukbasi, 
 Maxime Le Sage, 
-Jessica Nguyen
+Jessica Nguyen,
+Harieshan Elamurugan
