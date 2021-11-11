@@ -7,12 +7,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.content.Context;
+
+import java.util.Locale;
 
 
 public class Settings extends AppCompatActivity {
@@ -21,13 +25,35 @@ public class Settings extends AppCompatActivity {
     Button saveButton;
     float x1, x2, y1, y2;
     static float THRESHOLD = 150;
+    TextToSpeech tts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+
+                    int result = tts.setLanguage(Locale.ENGLISH);
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Log.e("TTS", "Language not supported");
+                    }
+                } else {
+                    Log.e("TTS", "Initialization failed");
+                }
+            }
+        });
+
+
         TTS_checkBox = (CheckBox) findViewById(R.id.TTS);
+
+        if (TTS_checkBox.isChecked()) {
+            tts.speak(speak(), TextToSpeech.QUEUE_FLUSH, null);
+        }
+
         FontSize = (EditText) findViewById(R.id.FontSize);
         saveButton = (Button) findViewById(R.id.save_button);
 
@@ -92,6 +118,11 @@ public class Settings extends AppCompatActivity {
                 break;
         }
         return false;
+    }
+
+    private String speak() {
+        String txt = "Welcome to settings (enter more information here)";
+        return txt;
     }
 
 }
