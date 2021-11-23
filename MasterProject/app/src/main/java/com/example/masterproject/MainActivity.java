@@ -10,8 +10,11 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    float x1, x2, y1, y2;
+    static float THRESHOLD = 150;
     Button button_settings;
     Button button_calldesk;
+    Button button_wayfinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
                 openCallDesk();
             }
         });
+
+        button_wayfinder = (Button) findViewById(R.id.btn_wayfinder);
+        button_wayfinder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               openWayfinder();
+            }
+        });
     }
 
 
@@ -47,5 +58,33 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(MainActivity.this, CallDesk.class);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
+    public void openWayfinder(){
+        Intent i = new Intent(MainActivity.this, Wayfinder.class);
+        startActivity(i);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
+    // Screen Swiping
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        switch(touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = touchEvent.getX();
+                y1 = touchEvent.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = touchEvent.getX();
+                y2 = touchEvent.getY();
+                if(x1 <  x2 && (x2-x1) > THRESHOLD){
+                    // Left activity
+
+                }else if(x1 > x2 && (x1-x2) > THRESHOLD){
+                    // Right activity
+                    openWayfinder();
+                }
+                break;
+        }
+        return false;
     }
 }

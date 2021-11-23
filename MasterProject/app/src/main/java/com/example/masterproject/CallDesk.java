@@ -57,6 +57,7 @@ public class CallDesk extends AppCompatActivity {
 
 
 
+    // Screen Swiping
     public boolean onTouchEvent(MotionEvent touchEvent){
         switch(touchEvent.getAction()){
             case MotionEvent.ACTION_DOWN:
@@ -66,9 +67,9 @@ public class CallDesk extends AppCompatActivity {
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
-                if(x1 <  x2){
-                    // No Left activity
-                    Intent i = new Intent(CallDesk.this, MainActivity.class);
+                if(x1 <  x2 && (x2-x1) > THRESHOLD){
+                    // Left activity
+                    Intent i = new Intent(CallDesk.this, Wayfinder.class);
                     startActivity(i);
                     overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                     finish();

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MasterProject">
         <activity
+            android:name=".Wayfinder"
+            android:exported="false" />
+        <activity
             android:name=".CallDesk"
             android:exported="false" />
         <activity

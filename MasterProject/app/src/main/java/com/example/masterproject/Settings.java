@@ -16,6 +16,7 @@ import android.content.Context;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Settings extends AppCompatActivity{
@@ -61,7 +62,9 @@ public class Settings extends AppCompatActivity{
             TTS_checkBox.setChecked(false);
         }
 
-        int fontSizeSel = sharedPreferences.getInt("FontSize",1);
+        int fontSizeSel = 1;
+        fontSizeSel = sharedPreferences.getInt("FontSize",1);
+
         RadioButton fSChoice = (RadioButton) FontSize.getChildAt(fontSizeSel);
         fSChoice.setChecked(true);
         setFontSize(fontSizeSel);
@@ -134,6 +137,7 @@ public class Settings extends AppCompatActivity{
         editor.commit();
     }
 
+    // Screen Swiping
     public boolean onTouchEvent(MotionEvent touchEvent){
         switch(touchEvent.getAction()){
             case MotionEvent.ACTION_DOWN:
@@ -143,8 +147,8 @@ public class Settings extends AppCompatActivity{
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
-                if(x1 <  x2){
-                    // No Left activity
+                if(x1 <  x2 && (x2-x1) > THRESHOLD){
+                    // Left activity
                     Intent i = new Intent(Settings.this, CallDesk.class);
                     startActivity(i);
                     overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
