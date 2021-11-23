@@ -36,6 +36,8 @@ public class CallDesk extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call_desk);
 
+        Intent intent2 = getIntent();
+
         buttonCall = (Button) findViewById(R.id.button_help);
 
         buttonCall.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +48,14 @@ public class CallDesk extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        //String strSize = intent2.getStringExtra("SIZE");
+        //TextView descrip = (TextView) findViewById(R.id.explanation);
+        //descrip.setTextSize(Float.valueOf(strSize));
     }
+
+
 
     public boolean onTouchEvent(MotionEvent touchEvent){
         switch(touchEvent.getAction()){
