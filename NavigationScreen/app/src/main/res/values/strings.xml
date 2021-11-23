@@ -1,0 +1,11 @@
+<resources>
+    <!-- For Navigation page -->
+    <string name="app_name">NavigationScreen</string>
+    <string name="getting_ready">Getting Ready…</string>
+    <string name="progress">Progress:</string>
+    <string name="image_of_general_direction_to_move_in">Image of general direction to move in</string>
+    <string name="destination">Destination:</string>
+    <string name="view_instructions_as_text">View Instructions as Text</string>
+    <string name="repeat_verbal_instructions">Repeat Verbal Instructions</string>
+    <string name="exit_navigation">Exit Navigation</string>
+</resources>
