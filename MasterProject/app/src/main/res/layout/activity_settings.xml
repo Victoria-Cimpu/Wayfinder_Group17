@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textSize="24sp"
         android:text="Enable TTS" />
 
     <CheckBox
@@ -33,15 +34,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textSize="24sp"
         android:text="Text Size"/>
 
-    <EditText
+    <RadioGroup
         android:id="@+id/FontSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:minHeight="48dp"
-        android:text="Enter Text Size..." />
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <RadioButton
+            android:id="@+id/radioSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Small" />
+
+        <RadioButton
+            android:id="@+id/radioMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medium" />
+
+        <RadioButton
+            android:id="@+id/radioLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Large" />
+    </RadioGroup>
 
     <Space
         android:layout_width="match_parent"
