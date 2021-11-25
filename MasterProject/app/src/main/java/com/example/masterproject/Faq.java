@@ -28,12 +28,16 @@ public class Faq extends AppCompatActivity {
                 y2 = touchEvent.getY();
                 if(x1 <  x2 && (x2-x1) > THRESHOLD){
                     // Left activity
-                    Intent i = new Intent(Faq.this, Settings.class);
+                    Intent i = new Intent(Faq.this, CallDesk.class);
                     startActivity(i);
                     overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                     finish();
                 }else if(x1 > x2 && (x1-x2) > THRESHOLD){
                     // Right activity
+                    Intent i = new Intent(Faq.this, Settings.class);
+                    startActivity(i);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
 
                 }
                 break;

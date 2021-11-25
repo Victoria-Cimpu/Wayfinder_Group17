@@ -75,7 +75,7 @@ public class CallDesk extends AppCompatActivity {
                     finish();
                 }else if(x1 > x2 && (x1-x2) > THRESHOLD){
                     // Right activity
-                    Intent i = new Intent(CallDesk.this, Settings.class);
+                    Intent i = new Intent(CallDesk.this, Faq.class);
                     startActivity(i);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
