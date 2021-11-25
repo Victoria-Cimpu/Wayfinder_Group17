@@ -13,6 +13,9 @@
             android:name=".Wayfinder"
             android:exported="false" />
         <activity
+            android:name=".Faq"
+            android:exported="false" />
+        <activity
             android:name=".CallDesk"
             android:exported="false" />
         <activity

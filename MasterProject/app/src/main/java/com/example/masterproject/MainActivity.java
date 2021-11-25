@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Button button_settings;
     Button button_calldesk;
     Button button_wayfinder;
-
+    Button button_faq;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
                openWayfinder();
             }
         });
+        button_faq = (Button) findViewById(R.id.btn_question);
+        button_faq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFAQ();
+            }
+        });
     }
 
 
@@ -62,6 +69,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void openWayfinder(){
         Intent i = new Intent(MainActivity.this, Wayfinder.class);
+        startActivity(i);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
+    public void openFAQ() {
+        Intent i = new Intent(MainActivity.this, Faq.class);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
