@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SettingsFR" >
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="64dp" />
+
+    <TextView
+        android:id="@+id/TTs_text_fr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Activer la synthèse vocale"
+        android:textSize="24sp" />
+
+    <CheckBox
+        android:id="@+id/TTS_fr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Synthèse vocale" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="64dp" />
+
+    <TextView
+        android:id="@+id/FontSize_text_fr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Police de caractère"
+        android:textSize="24sp" />
+
+    <RadioGroup
+        android:id="@+id/FontSize_fr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <RadioButton
+            android:id="@+id/radioSmall_fr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Petite" />
+
+        <RadioButton
+            android:id="@+id/radioMedium_fr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Moyenne" />
+
+        <RadioButton
+            android:id="@+id/radioLarge_fr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Grande" />
+    </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="64dp" />
+
+    <Button
+        android:id="@+id/save_button_fr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Sauvegarder" />
+
+</LinearLayout>

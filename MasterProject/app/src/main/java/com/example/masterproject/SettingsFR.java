@@ -15,7 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
-public class Settings extends AppCompatActivity{
+public class SettingsFR extends AppCompatActivity{
     CheckBox TTS_checkBox;
     RadioGroup FontSize;
     Button saveButton;
@@ -31,12 +31,12 @@ public class Settings extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_settings_fr);
 
-        TTS_checkBox = (CheckBox) findViewById(R.id.TTS);
+        TTS_checkBox = (CheckBox) findViewById(R.id.TTS_fr);
         //FontSize = (EditText) findViewById(R.id.FontSize);
-        FontSize = (RadioGroup) findViewById(R.id.FontSize);
-        saveButton = (Button) findViewById(R.id.save_button);
+        FontSize = (RadioGroup) findViewById(R.id.FontSize_fr);
+        saveButton = (Button) findViewById(R.id.save_button_fr);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +50,7 @@ public class Settings extends AppCompatActivity{
     }
 
     private void loadSavedPreferences() {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Settings.this);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(SettingsFR.this);
         boolean TTS_on = sharedPreferences.getBoolean("TTS_on", true);
         if (TTS_on) {
             TTS_checkBox.setChecked(true);
@@ -67,15 +67,15 @@ public class Settings extends AppCompatActivity{
     }
 
     private void setFontSize(int fontSizeSel) {
-        TextView enableTTS = (TextView) findViewById(R.id.TTs_text);
-        CheckBox TTS = (CheckBox) findViewById(R.id.TTS);
-        TextView fontSize = (TextView) findViewById(R.id.FontSize_text);
-        RadioButton small = (RadioButton) findViewById(R.id.radioSmall);
-        RadioButton medium = (RadioButton) findViewById(R.id.radioMedium);
-        RadioButton large = (RadioButton) findViewById(R.id.radioLarge);
-        TextView expl = (TextView) findViewById(R.id.explanation);
+        TextView enableTTS = (TextView) findViewById(R.id.TTs_text_fr);
+        CheckBox TTS = (CheckBox) findViewById(R.id.TTS_fr);
+        TextView fontSize = (TextView) findViewById(R.id.FontSize_text_fr);
+        RadioButton small = (RadioButton) findViewById(R.id.radioSmall_fr);
+        RadioButton medium = (RadioButton) findViewById(R.id.radioMedium_fr);
+        RadioButton large = (RadioButton) findViewById(R.id.radioLarge_fr);
+        TextView expl = (TextView) findViewById(R.id.explanation_fr);
 
-        Intent intent = new Intent(Settings.this,CallDesk.class);
+        Intent intent = new Intent(SettingsFR.this,CallDeskFR.class);
 
         //int themeID = R.style.FontSizeMedium;
         if (fontSizeSel == 0) {
@@ -120,14 +120,14 @@ public class Settings extends AppCompatActivity{
 
 
     private void savePreferences(String key, boolean value) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Settings.this);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(SettingsFR.this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(key, value);
         editor.commit();
     }
 
     private void savePreferences(String key, int value) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Settings.this);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(SettingsFR.this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(key, value);
         editor.commit();
@@ -145,7 +145,7 @@ public class Settings extends AppCompatActivity{
                 y2 = touchEvent.getY();
                 if(x1 <  x2 && (x2-x1) > THRESHOLD){
                     // Left activity
-                    Intent i = new Intent(Settings.this, Faq.class);
+                    Intent i = new Intent(SettingsFR.this, FaqFR.class);
                     startActivity(i);
                     overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                     finish();

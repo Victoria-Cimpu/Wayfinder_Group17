@@ -6,10 +6,10 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/question1"
+        android:id="@+id/question1_fr"
         android:layout_width="345dp"
-        android:layout_height="41dp"
-        android:text="Question 1: What call desk do?"
+        android:layout_height="wrap_content"
+        android:text="@string/question1_fr"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,46 +19,47 @@
         app:layout_constraintVertical_bias="0.068" />
 
     <TextView
-        android:id="@+id/answer1"
+        android:id="@+id/answer1_fr"
         android:layout_width="338dp"
-        android:layout_height="90dp"
-        android:text="Answer: Upon clicking the call desk, it will call the librarian for assistance. This feature should only be used when you cannot navigate using wayfinder."
+        android:layout_height="wrap_content"
+        android:text="@string/answer1_fr"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.17" />
 
     <TextView
-        android:id="@+id/question2"
+        android:id="@+id/question2_fr"
         android:layout_width="345dp"
-        android:layout_height="41dp"
-        android:text="Question 2: How do I enable TTS?"
+        android:layout_height="wrap_content"
+        android:text="@string/question2_fr"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.289" />
+        app:layout_constraintVertical_bias="0.302" />
 
     <TextView
-        android:id="@+id/answer2"
+        android:id="@+id/answer2_fr"
         android:layout_width="345dp"
-        android:layout_height="90dp"
-        android:text="Answer: Go into Settings and enable the TTS checkbox. Once enabled, every page on the application will be read out by TTS."
+        android:layout_height="wrap_content"
+        android:text="@string/answer2_fr"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407" />
+        app:layout_constraintVertical_bias="0.396" />
 
     <TextView
-        android:id="@+id/answer3"
+        android:id="@+id/answer3_fr"
         android:layout_width="345dp"
-        android:layout_height="90dp"
-        android:text="Answer: Yes! If the French buttons is clicked, the TTS will switch to French."
+        android:layout_height="wrap_content"
+        android:text="@string/answer3_fr"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,10 +69,10 @@
         app:layout_constraintVertical_bias="0.673" />
 
     <TextView
-        android:id="@+id/question3"
+        android:id="@+id/question3_fr"
         android:layout_width="358dp"
-        android:layout_height="64dp"
-        android:text="Question 3: Can TTS switch to French?"
+        android:layout_height="wrap_content"
+        android:text="@string/question3_fr"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,4 +80,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.534" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

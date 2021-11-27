@@ -8,20 +8,20 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityFR extends AppCompatActivity {
     float x1, x2, y1, y2;
     static float THRESHOLD = 150;
     Button button_settings;
     Button button_calldesk;
     Button button_wayfinder;
     Button button_faq;
-    Button button_french;
+    Button button_english;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_fr);
 
-        button_settings = (Button) findViewById(R.id.btn_settings);
+        button_settings = (Button) findViewById(R.id.btn_settings_fr);
         button_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button_calldesk = (Button) findViewById(R.id.btn_callDesk);
+        button_calldesk = (Button) findViewById(R.id.btn_callDesk_fr);
         button_calldesk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,25 +37,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button_wayfinder = (Button) findViewById(R.id.btn_wayfinder);
+        button_wayfinder = (Button) findViewById(R.id.btn_wayfinder_fr);
         button_wayfinder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               openWayfinder();
+                openWayfinder();
             }
         });
-        button_faq = (Button) findViewById(R.id.btn_question);
+        button_faq = (Button) findViewById(R.id.btn_question_fr);
         button_faq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openFAQ();
             }
         });
-        button_french = (Button) findViewById(R.id.btn_lang);
-        button_french.setOnClickListener(new View.OnClickListener() {
+
+        button_english = (Button) findViewById(R.id.btn_lang_fr);
+        button_english.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFrench();
+                openEnglish();
             }
         });
     }
@@ -63,31 +64,31 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void openSettings(){
-        Intent i = new Intent(MainActivity.this, Settings.class);
+        Intent i = new Intent(MainActivityFR.this, SettingsFR.class);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     public void openCallDesk(){
-        Intent i = new Intent(MainActivity.this, CallDesk.class);
+        Intent i = new Intent(MainActivityFR.this, CallDeskFR.class);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     public void openWayfinder(){
-        Intent i = new Intent(MainActivity.this, Wayfinder.class);
+        Intent i = new Intent(MainActivityFR.this, WayfinderFR.class);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     public void openFAQ() {
-        Intent i = new Intent(MainActivity.this, Faq.class);
+        Intent i = new Intent(MainActivityFR.this, FaqFR.class);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
-    public void openFrench(){
-        Intent i = new Intent(MainActivity.this, MainActivityFR.class);
+    public void openEnglish(){
+        Intent i = new Intent(MainActivityFR.this, MainActivity.class);
         startActivity(i);
         finish();
     }

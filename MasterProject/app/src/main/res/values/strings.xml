@@ -14,4 +14,22 @@
     <string name="view_instructions_as_text">View Instructions as Text</string>
     <string name="repeat_verbal_instructions">Repeat Verbal Instructions</string>
     <string name="exit_navigation">Exit Navigation</string>
+    <string name="btn_callDesk_fr">Appeler le bureau</string>
+    <string name="button_settings_fr">Paramètres</string>
+    <string name="button_lang_fr">English</string>
+    <string name="btn_wayfinder_fr">Trouver un emplacement</string>
+    <string name="nav_main_loading_text_fr">Préparation en cours</string>
+    <string name="nav_main_progress_text_fr">Progrès</string>
+    <string name="nav_main_text_fr">Instructions sous forme de texte</string>
+    <string name="nav_main_tts_fr">Répéter les instructions à voix haute</string>
+    <string name="nav_main_exit_fr">Quitter la navigation</string>
+    <string name="callDesk_fr">Appeler le bureau</string>
+    <string name="explanation_fr">Si vous avez besoin de l\'aide d\'un employé de la bibliothèque, appuyez sur le bouton ci-dessous pour appeler le bureau des informations</string>
+    <string name="button_help_fr">Demander de l\'aide</string>
+    <string name="question1_fr">Question 1: Comment fonctionne le bouton «Appeler le bureau»?</string>
+    <string name="answer1_fr">Réponse: En appuyant sur le bouton «Demander de l\'aide» dans la fenêtre «Appeler le bureau», un appel sera effectué à un employé de la bibliothèque afin qu\'il vienne vous aider. Ceci ne devrait être utilisé qu\'en dernier recours.</string>
+    <string name="question2_fr">Question 2: Comment activer/désactiver la synthèse vocale?</string>
+    <string name="answer2_fr">Réponse: Dans les paramètres, appuyer sur la case «Synthèse vocale» afin de l\'activer/désactiver dans toute l\'application.</string>
+    <string name="question3_fr">Question 3: Est-ce que la synthèse vocale fonctionne dans les deux langues?</string>
+    <string name="answer3_fr">Réponse 3: Oui! La synthèse vocale devrait s\'adapter au texte autant en anglais qu\'en français.</string>
 </resources>

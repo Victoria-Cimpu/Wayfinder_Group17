@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MasterProject">
         <activity
+            android:name=".SettingsFR"
+            android:exported="false" />
+        <activity
+            android:name=".FaqFR"
+            android:exported="false" />
+        <activity
+            android:name=".CallDeskFR"
+            android:exported="false" />
+        <activity
+            android:name=".WayfinderFR"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityFR"
+            android:exported="false" />
+        <activity
             android:name=".Wayfinder"
             android:exported="false" />
         <activity
