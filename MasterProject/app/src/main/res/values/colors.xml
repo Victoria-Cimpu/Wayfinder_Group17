@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="uOttawa_garnet">#FF8F001A</color>
+    <color name="uOttawa_garnet_v">#FFDF4526</color>
+    <color name="uOttawa_gray">#FF80746C</color>
+    <color name="uOttawa_gray_v">#FFACA39A</color>
 </resources>
