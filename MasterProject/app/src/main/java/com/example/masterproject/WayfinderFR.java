@@ -6,20 +6,96 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class WayfinderFR extends AppCompatActivity {
     float x1, x2, y1, y2;
     static float THRESHOLD = 150;
+    private TextToSpeech mTTS;
+    private TextView mEditText;
+    private Button verbalInstructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wayfinder_fr);
+
+        verbalInstructions = findViewById(R.id.nav_main_tts_fr);
+
+        mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    int result = mTTS.setLanguage(Locale.FRANCE);
+
+                    if (result == TextToSpeech.LANG_MISSING_DATA
+                            || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Log.e("TTS", "Language not supported");
+                    } else {
+                        verbalInstructions.setEnabled(true);
+                    }
+                } else {
+                    Log.e("TTS", "Initialization failed");
+                }
+            }
+        });
+
+        verbalInstructions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                speak();
+            }
+        });
+    }
+
+    private void speak() {
+        String text = "Veuillez aller de l'avant";
+        //mTTS.setPitch(100);
+        //mTTS.setSpeechRate(100);
+
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    private void speak2() {
+        String text = "Tournez légèrement à droite";
+        //mTTS.setPitch(100);
+        //mTTS.setSpeechRate(100);
+
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    private void speak3() {
+        String text = "Tournez légèrement à gauche";
+        //mTTS.setPitch(100);
+        //mTTS.setSpeechRate(100);
+
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+    private void speak4() {
+        String text = "Vous êtes arrivé";
+        //mTTS.setPitch(100);
+        //mTTS.setSpeechRate(100);
+
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mTTS != null) {
+            mTTS.stop();
+            mTTS.shutdown();
+        }
+
+        super.onDestroy();
     }
 
     // Screen Swiping
@@ -65,12 +141,16 @@ public class WayfinderFR extends AppCompatActivity {
 
         final Handler handler = new Handler();
 
+        speak();
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                speak2();
                 navIcon.setRotation(30);
             }
         }, 5000);
+
 
         handler.postDelayed(new Runnable() {
             @Override
@@ -79,16 +159,20 @@ public class WayfinderFR extends AppCompatActivity {
             }
         }, 7000);
 
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                navIcon.setRotation(30);
-            }
-        }, 10000);
 
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                speak3();
+                navIcon.setRotation(30);
+            }
+        }, 10000);
+
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                speak4();
                 navIcon.setRotation(0);
             }
         }, 12000);
